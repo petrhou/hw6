@@ -1,5 +1,4 @@
 public static void main(String[] args) {
-    // Создаем массив машин для тестирования
     Car[] cars = {
         new Car(1, "Toyota", "Camry", 2020, "Black", 25000, "AB123CD"),
         new Car(2, "Honda", "Civic", 2019, "White", 22000, "EF456GH"),
@@ -8,11 +7,9 @@ public static void main(String[] args) {
         new Car(5, "Toyota", "RAV4", 2015, "Silver", 18000, "QR345ST")
     };
     
-    // Тестируем метод getCarByBrend
     Car[] toyotaCars = getCarByBrend(cars, "Toyota");
     System.out.println("Найдено Toyota: " + toyotaCars.length);
     
-    // Тестируем метод getCarByBrendAndYearOperational
     Car[] oldToyotaCars = getCarByBrendAndYearOperational(cars, "Toyota", 5);
     System.out.println("Toyota старше 5 лет: " + oldToyotaCars.length);
     
