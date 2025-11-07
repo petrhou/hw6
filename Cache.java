@@ -54,4 +54,12 @@ public class Cache<T> {
         }
         return (T) items[startIndex];
     }
+
+    public T getLast() {
+        if (size == 0) {
+            return null;
+        }
+        int lastIndex = (startIndex + size - 1) % maxSize;
+        return (T) items[lastIndex];
+    }
 }
