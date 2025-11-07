@@ -20,4 +20,21 @@ public class Cache<T> {
             startIndex = (startIndex + 1) % maxSize;
         }
     }
+
+    public boolean remove(T item) {
+        for (int i = 0; i < size; i++) {
+            int index = (startIndex + i) % maxSize;
+            if (items[index].equals(item)) {
+                for (int j = i; j < size - 1; j++) {
+                    int currentIndex = (startIndex + j) % maxSize;
+                    int nextIndex = (startIndex + j + 1) % maxSize;
+                    items[currentIndex] = items[nextIndex];
+                }
+                items[(startIndex + size - 1) % maxSize] = null;
+                size--;
+                return true;
+            }
+        }
+        return false;
+    }
 }
