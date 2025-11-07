@@ -37,4 +37,14 @@ public class Cache<T> {
         }
         return false;
     }
+
+    public boolean exists(T item) {
+        for (int i = 0; i < size; i++) {
+            int index = (startIndex + i) % maxSize;
+            if (items[index].equals(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
