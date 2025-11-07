@@ -10,4 +10,14 @@ public class Cache<T> {
         this.size = 0;
         this.startIndex = 0;
     }
+
+    public void add(T item) {
+        if (size < maxSize) {
+            items[(startIndex + size) % maxSize] = item;
+            size++;
+        } else {
+            items[startIndex] = item;
+            startIndex = (startIndex + 1) % maxSize;
+        }
+    }
 }
